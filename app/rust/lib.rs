@@ -5,7 +5,7 @@ pub mod error;
 pub mod states;
 use crate::{constant::*, error::*, states::*};
 
-declare_id!("CodtZeEmvygQ6gdFThKPwMX7XxVrDPy9skv2wfjFJMmG");
+declare_id!("Add your Quicknode endpoints here (Http Provider)");
 
 #[program]
 pub mod clever_todo {
