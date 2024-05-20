@@ -6,7 +6,7 @@ import styles from '../styles/Home.module.css'
 
 
 const Home = () => {
-    const { initialized, initializeStaticUser, loading, transactionPending, completedTodos, incompleteTodos, addTodo, markTodo, removeTodo, markStaticTodo,removeStaticTodo, addStaticTodo, input,  handleChange } = useTodo()
+    const { initialized, initializeUser, loading, transactionPending, completedTodos, incompleteTodos, addTodo, markTodo, removeTodo, input,  handleChange } = useTodo()
 
 
     return (
@@ -16,8 +16,8 @@ const Home = () => {
                     <div className={styles.todoInput}>
                         <div className={`${styles.todoCheckbox} ${styles.checked}`} />
                         <div className={styles.inputContainer}>
-                            <form onSubmit={addStaticTodo}>
-                                <input value = {input} onChange={handleChange} id={styles.inputField} type="text" placeholder='Create a new todo...' />
+                            <form onSubmit={addTodo}>
+                                <input value = {input} onChange={handleChange} id={styles.inputField} type="text" placeholder='Create a new todo' />
                             </form>
                         </div>
                         <div className={styles.iconContainer}>
@@ -25,18 +25,18 @@ const Home = () => {
                         </div>
                     </div>
                 ) : (
-                    <button type="button" className={styles.button} onClick={() => initializeStaticUser()} disabled={transactionPending}>
+                    <button type="button" className={styles.button} onClick={() => initializeUser()} disabled={transactionPending}>
                         Initialize
                     </button>
                 )}
-                {/* <WalletMultiButton /> */}
+                {<WalletMultiButton />}
             </div>
 
             <div className={styles.mainContainer}>
                 <Loading loading={loading}>
-                    <TodoSection title="Tasks" todos={incompleteTodos} action={markStaticTodo} />
+                    <TodoSection title="Tasks" todos={incompleteTodos} action={markTodo} />
 
-                    <TodoSection title="Completed" todos={completedTodos} action={removeStaticTodo} />
+                    <TodoSection title="Completed" todos={completedTodos} action={removeTodo} />
                 </Loading>
             </div>
         </div>

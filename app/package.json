@@ -17,6 +17,7 @@
         "@solana/wallet-adapter-react-ui": "^0.9.5",
         "@solana/wallet-adapter-wallets": "^0.16.0",
         "@solana/web3.js": "^1.36.0",
+        "@web3auth/metamask-adapter": "^8.5.0",
         "next": "12.2.0",
         "react": "^17.0.0 || ^18.0.0",
         "react-dom": "18.2.0",
